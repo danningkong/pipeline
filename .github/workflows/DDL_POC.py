@@ -5,7 +5,7 @@ from sqlalchemy import  MetaData, Table, Column, Integer, String
 
 engine = sa.create_engine('mssql+pyodbc://DESKTOP-68IH9E2\SQLEXPRESS/API?driver=SQL+Server+Native+Client+11.0')
 
-sql=text('create table dbo.test (test int null)')
+sql=text('drop table if exists dbo.test')
 
 with engine.connect().execution_options(isolation_level="AUTOCOMMIT") as con:
 
