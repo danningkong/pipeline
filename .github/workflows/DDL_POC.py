@@ -2,14 +2,17 @@ import sqlalchemy as sa
 from sqlalchemy import text
 from sqlalchemy.schema import CreateTable
 from sqlalchemy import  MetaData, Table, Column, Integer, String
+import pyodbc
 
-engine = sa.create_engine('mssql+pyodbc://DESKTOP-68IH9E2\SQLEXPRESS/API?driver=SQL+Server+Native+Client+11.0')
+print(pyodbc.drivers())
 
-sql=text('drop table if exists dbo.test')
+# engine = sa.create_engine('mssql+pyodbc://DESKTOP-68IH9E2\SQLEXPRESS/API?driver=SQL+Server+Native+Client+11.0')
 
-with engine.connect().execution_options(isolation_level="AUTOCOMMIT") as con:
+# sql=text('drop table if exists dbo.test')
 
-    con.execute(sql)
+# with engine.connect().execution_options(isolation_level="AUTOCOMMIT") as con:
+
+#     con.execute(sql)
 
 
-con.close()
+# con.close()
