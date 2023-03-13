@@ -4,15 +4,15 @@ from sqlalchemy.schema import CreateTable
 from sqlalchemy import  MetaData, Table, Column, Integer, String
 import pyodbc
 
-print(pyodbc.drivers())
+# print(pyodbc.drivers())
 
-# engine = sa.create_engine('mssql+pyodbc://DESKTOP-68IH9E2\SQLEXPRESS/API?driver=SQL+Server+Native+Client+11.0')
+engine = sa.create_engine('mssql+pyodbc://DESKTOP-68IH9E2\SQLEXPRESS/API?driver=ODBC Driver 17 for SQL Server')
 
-# sql=text('drop table if exists dbo.test')
+sql=text('drop table if exists dbo.test')
 
-# with engine.connect().execution_options(isolation_level="AUTOCOMMIT") as con:
+with engine.connect().execution_options(isolation_level="AUTOCOMMIT") as con:
 
-#     con.execute(sql)
+    con.execute(sql)
 
 
-# con.close()
+con.close()
